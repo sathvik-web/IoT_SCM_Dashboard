@@ -1,0 +1,1 @@
+Synthetic models trained (eta_model.pkl and spoilage_model.pkl) using random synthetic data. Models are RandomForest and for demo purposes only. Replace with real datasets for production.

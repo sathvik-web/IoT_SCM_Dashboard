@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>AI-Driven IoT Supply Chain Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <h2 class="header-title">AI-Driven IoT Supply Chain Monitoring Dashboard</h2>
+    <p class="header-sub">Real-time telemetry • AI predictions • Product health tracking</p>
+
+    <div id="ai-panel" class="panel ai-panel">
+      <h3>AI Predictions</h3>
+
+      <div class="ai-row">
+        <div class="ai-block">
+          <span class="ai-label">Estimated Delivery</span>
+          <span class="ai-value" id="eta">--</span>
+          <span class="ai-unit">minutes</span>
+        </div>
+
+        <div class="ai-block">
+          <span class="ai-label">Spoilage Risk</span>
+          <span class="ai-value" id="risk">--</span>
+        </div>
+
+        <div class="ai-block">
+          <span class="ai-label">Anomaly</span>
+          <span class="ai-value" id="anomaly">No</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="panels">
+
+      <div class="panel">
+        <h3>Latest Telemetry</h3>
+        <pre id="latest">no data</pre>
+      </div>
+
+      <div class="panel">
+        <h3>Temperature (last 20)</h3>
+        <canvas id="tempChart"></canvas>
+      </div>
+
+      <div class="panel">
+        <h3>Humidity (last 20)</h3>
+        <canvas id="humChart"></canvas>
+      </div>
+
+      <div class="panel alerts">
+        <h3>Alerts</h3>
+        <ul id="alerts-list">
+          <li>No alerts</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="footer-note">Status: <span id="system-status" class="badge">Offline</span> • Last update: <span id="last-update">--</span></p>
+
+    <script src="script.js"></script>
+  </div>
+</body>
+</html>
