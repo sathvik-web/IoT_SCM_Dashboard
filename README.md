@@ -1,40 +1,19 @@
 # AI-Driven IoT-Inspired Supply Chain Monitoring Dashboard (Hybrid)
+A real-time dashboard for monitoring supply-chain package conditions using IoT telemetry and AI models.
+The system simulates sensor data (temperature, humidity, shock), predicts delivery ETA and spoilage risk, and visualizes everything in a modern frontend dashboard.
 
-This repository implements a **hybrid** IoT-style Supply Chain Monitoring Dashboard that uses **simulated sensors** + **AI models** (ETA prediction & spoilage detection).
+# Project Features
+1. Real-Time IoT Telemetry -  Temperature, Humidity, Shock/Vibration, Timestamp, Package ID
+2. AI Prediction Models - ETA Prediction (min),Spoilage Risk (0 = Safe, 1 = Warning, 2 = High Risk),Anomaly Detection (Auto detects abnormal sensor behavior)
+3. Interactive Frontend Dashboard - Real-time charts, AI prediction panel, Alert system, Latest telemetry panel, Status indicator (Online / Offline)
+4. FastAPI Backend 
 
-**Project contents created automatically for you in this workspace.**
+# Dashboard Preview
+<img width="1691" height="877" alt="image" src="https://github.com/user-attachments/assets/a90f649b-295a-49b7-8d58-2310c0753a54" />
+<img width="1684" height="594" alt="image" src="https://github.com/user-attachments/assets/5169baa0-a7ad-4708-894d-9c10e91da3de" />
 
-## Quick structure
-```
-IoT_SCM_Dashboard/
-├── backend/
-│   ├── main.py              # FastAPI backend
-│   ├── firebase_config.py   # Firebase connection
-│   ├── models/
-│   │   ├── eta_model.pkl
-│   │   └── spoilage_model.pkl
-│   └── utils/
-│       └── anomaly_detector.py
-├── simulator/
-│   └── sensor_simulator.py  # Simulated IoT sensors that POST to backend
-├── dashboard/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-├── database/
-│   └── sample_data.json
-└── README.md
-```
-
-## Resume (local file)
-Your uploaded resume is included in this workspace at:
-`/mnt/data/cv_resume.docx`
-
-> Use this path if you want to reference your resume in documentation or when zipping projects for submission.
-
----
 ## How to run (local demo)
-1. Install dependencies (recommended inside a virtualenv):
+1. Install dependencies (inside a virtualenv):
 ```
 pip install fastapi uvicorn scikit-learn pandas numpy requests python-multipart
 ```
@@ -52,11 +31,5 @@ python ../simulator/sensor_simulator.py --backend http://localhost:8000/api/push
 
 4. Open `dashboard/index.html` in a browser. The dashboard polls the backend for latest telemetry and displays charts.
 
----
-## Notes
-- This starter uses **synthetic data** and trains simple ML models on generated data so you have runnable `.pkl` models for demo purposes.
-- Replace synthetic training with your real dataset if available.
-- Firebase integration points are provided in `firebase_config.py` — set your Firebase Realtime DB URL to push data to Firebase if you want real-time cloud storage.
-- The frontend is kept minimal and polls backend endpoints for simplicity (no complex websockets).
 
----
+
